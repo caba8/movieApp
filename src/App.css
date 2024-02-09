@@ -1,38 +1,53 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+  width: 100%;
+  display: grid;
+  grid:
+    "header header header" 1fr
+    ". container ." auto
+    / 0.2fr 1fr 0.2fr;
+  gap: 8px;
+  grid-auto-flow: row dense;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  grid-area: header;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  grid-area: container;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.sectionBody {
+  display: grid;
+  grid: ". body ." 1fr / 0.2fr 1fr 0.2fr;
+  gap: 8px;
+}
+
+.bodyInfo {
+  grid-area: body;
+}
+
+.recomendationMovies {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 961px) {
+  .main {
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sectionBody {
+    display: flex;
+    flex-direction: column;
   }
 }
