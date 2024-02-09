@@ -11,11 +11,12 @@ const posterContainerStyles = makeStyles(
       grid: '". infoContent ." 1fr / 0.2fr 1fr 0.2fr',
       gap: "8px",
       "@media screen and (max-width: 961px)": {
-        display: "grid",
+        display: "flex",
         position: "relative",
         backgroundSize: "cover",
         grid: "none",
         backgroundPosition: "inherit",
+        paddingInlineStart: "15px",
       },
     },
     infoHeader: {
